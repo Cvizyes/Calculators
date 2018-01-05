@@ -8,19 +8,13 @@ describe('calculator.vue', () => {
     expect(vm.$el.querySelector('.hello h1').textContent)
     .to.equal('Welcome to Your calculator app')
   });
-  it('should run press button ',function (press){
+  it('should run equals button ',function (equals){
     const button = calculatorCopenent.$el.querySelector('button');
     const clickEvent = new window.Event('click');
     button.dispatchEvent(clickEvent);
     calculatorCopenent._watcher.run();
   });
     it('should run clear button',function (clear){
-    const button = calculatorCopenent.$el.querySelector('button');
-    const clickEvent = new window.Event('click');
-    button.dispatchEvent(clickEvent);
-    calculatorCopenent._watcher.run();
-  });
-    it('should run backSpace button',function (backSpace){
     const button = calculatorCopenent.$el.querySelector('button');
     const clickEvent = new window.Event('click');
     button.dispatchEvent(clickEvent);
@@ -38,42 +32,8 @@ describe('calculator.vue', () => {
     button.dispatchEvent(clickEvent);
     calculatorCopenent._watcher.run();
   });
-    it('should run plus button',function (plus){
-    const button = calculatorCopenent.$el.querySelector('button');
-    const clickEvent = new window.Event('click');
-    button.dispatchEvent(clickEvent);
-    calculatorCopenent._watcher.run();
-  });
-    it('should run minus button',function (minus){
-    const button = calculatorCopenent.$el.querySelector('button');
-    const clickEvent = new window.Event('click');
-    button.dispatchEvent(clickEvent);
-    calculatorCopenent._watcher.run();
-  });
-    it('should run sin button',function (sin){
-    const button = calculatorCopenent.$el.querySelector('button');
-    const clickEvent = new window.Event('click');
-    button.dispatchEvent(clickEvent);
-    calculatorCopenent._watcher.run();
-  });
-    it('should run cos',function (cos){
-    const button = calculatorCopenent.$el.querySelector('button');
-    const clickEvent = new window.Event('click');
-    button.dispatchEvent(clickEvent);
-    calculatorCopenent._watcher.run();
-  });
-    it('should run',function (tan){
-    const button = calculatorCopenent.$el.querySelector('button');
-    const clickEvent = new window.Event('click');
-    button.dispatchEvent(clickEvent);
-    calculatorCopenent._watcher.run();
-  });
-    it('should run log button',function (log){
-    const button = calculatorCopenent.$el.querySelector('button');
-    const clickEvent = new window.Event('click');
-    button.dispatchEvent(clickEvent);
-    calculatorCopenent._watcher.run();
-  });
+    
+  })
     it('should run squareRoot button',function (squareRoot){
     const button = calculatorCopenent.$el.querySelector('button');
     const clickEvent = new window.Event('click');
@@ -85,5 +45,5 @@ describe('calculator.vue', () => {
     const clickEvent = new window.Event('click');
     button.dispatchEvent(clickEvent);
     calculatorCopenent._watcher.run();
-  });
-})
+  })
+}

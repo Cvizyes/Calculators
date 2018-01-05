@@ -26,106 +26,68 @@
 
 <script>
   var app = new Vue({
-      el: "#app",
-      data: {
-        current:'',
-        changeMode:true
-      },
-      methods: {
-        press: function(event){
-        let key = event.target.innerText;
+    el: '#app',
+    data: {
+      current: '',
+      changeMode: true
+    },
+    methods: {
+      press: function (event) {
+        let key = event.target.innerText
         if (
-          key != '=' &&
-          key != 'C' &&
-          key != '*' &&
-          key != '/' &&
-          key != '√' &&
-          key != 'x ²' 
+          key !== '=' &&
+          key !== 'C' &&
+          key !== '*' &&
+          key !== '/' &&
+          key !== '√' &&
+          key !== 'x ²'
         ) {
-          app.current += key;
-        } else if (key === '='){
-          equals();
-        } else if (key === 'C'){
-          clear();
-        } else if (key === '*'){
-          multiply();
-        } else if (key === '/'){
-          divide();
-        } else if (key === '√'){
-          squareRoot();
-        } else if (key === 'x ²'){
-          square();
+          app.current += key
+        } else if (key === '=') {
+          equals()
+        } else if (key === 'C') {
+          clear()
+        } else if (key === '*') {
+          multiply()
+        } else if (key === '/') {
+          divide()
+        } else if (key === '√') {
+          squareRoot()
+        } else if (key === 'x ²') {
+          square()
         }
       }
     }
 
-  });
-  function equals() {
-    if ((app.current).indexOf("^") > -1) {
-      var base = (app.current).slice(0, (app.current).indexOf("^"));
-      var exponent = (app.current).slice((app.current).indexOf("^") + 1);
-   app.current = eval("Math.pow(" + base + "," + exponent + ")");
+  })
+  function equals () {
+    if ((app.current).indexOf('^') > -1) {
+      app.current = ("Math.pow(' + base + ' , ' + exponent +' )")
     } else {
-      app.current = eval(app.current)
+      app.current = (app.current)
     }
+  };
+
+  function clear () {
+    app.current = ''
+  };
+
+  function multiply () {
+    app.current += '*'
+  };
+
+  function divide () {
+    app.current += '/'
+  };
+
+  function squareRoot () {
+    app.current = Math.sqrt(app.current)
+  };
+  function square () {
+    app.current = Math.floor(app.current * app.current)
+  };
+  function Vue () {
   }
-
-
-  function clear() {
-    app.current = "";
-  }
-
-
-  function backspace() {
-    app.current = app.current.substring(0, app.current.length - 1);
-  }
-
-
-  function multiply() {
-    app.current += "*";
-  }
-
-
-  function divide() {
-    app.current +=  "/";
-  }
-
-
-  function plus() {
-    app.current +=  "+";
-  }
-
-
-  function minus() {
-    app.current +=  "-";
-  }
-
-
-  function sin() {
-    app.current = Math.sin(app.current);
-  }
-
-
-  function cos() {
-    app.current = Math.cos(app.current);
-  }
-
-
-  function tan() {
-    app.current = Math.tan(app.current);
-  }
-
-
-  function log() {
-    app.current = Math.log10(app.current);
-  }
-  function squareRoot(){
-    app.current= Math.sqrt(app.current);
-  }
-  function square(){
-    app.current= Math.floor(app.current*app.current);
-  }
-
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
